@@ -35,6 +35,16 @@ module Hippo::TransactionSets
                   'HL.HL04' => ["0", "1"]
                 }
 
+      loop Hippo::TransactionSets::HIPAA_271::L2000C,
+        :name => "Patient Hierarchical Level Loop",
+        :minimum        => 0,
+        :maximum        => 99999,
+        :position       => 100,
+        :identified_by  => {
+          'HL.HL03' => '22',
+          'HL.HL04' => ["0", "1"]
+        }
+
       #Transaction Set Trailer
       segment Hippo::Segments::SE,
                 :name           => 'Transaction Set Trailer',
